@@ -1,8 +1,15 @@
-export function Post() {
+import classes from "./Post.module.css";
+
+type Props = {
+  author: string;
+  body: string;
+};
+
+export function Post({ author, body }: Props) {
   return (
-    <div>
-      <p>Christian George</p>
-      <p>React.js is awesome!</p>
-    </div>
+    <li className={classes.post}>
+      <p className={classes.author}>{author}</p>
+      <p className={classes.text}>{body}</p>
+    </li>
   );
 }
